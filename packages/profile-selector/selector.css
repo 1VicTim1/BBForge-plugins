@@ -1,4 +1,4 @@
-/* bbforge.selector-style: the profile list from bbforge.profile-selector as an accent pill. */
+/* The profile list as an accent pill in the status bar. */
 [data-ui-id="bbforge.profile-selector.select"].profile-pill .select-trigger {
   min-width: 0;
   height: 18px;

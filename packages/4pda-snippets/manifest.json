@@ -3,8 +3,8 @@
   "type": "plugin",
   "id": "bbforge.4pda-snippets",
   "name": "Шаблоны 4PDA",
-  "version": "1.0.0",
-  "description": "Готовые заготовки для тем 4PDA: шапка программы, спойлеры «Скриншоты» и «Скачать». Команды в палитре, плитки в панели «Блоки» и кнопка на панели форматирования.",
+  "version": "2.0.0",
+  "description": "Шаблоны шапок тем 4PDA для разделов Android и iOS (программы и игры), устройств (обсуждение, покупка, аксессуары, брак и ремонт, прошивки) и программ для ПК. Меню «Шаблоны», команды в палитре и плитки в панели «Блоки». Выделенный текст попадает в описание.",
   "author": "1VicTim1",
   "homepage": "https://github.com/1VicTim1/BBForge-plugins",
   "engine": ">=0.3.0",
@@ -16,16 +16,106 @@
   "contributes": {
     "commands": [
       {
-        "id": "bbforge.4pda-snippets.header",
-        "title": "Шаблон шапки темы",
+        "id": "bbforge.4pda-snippets.android-app",
+        "title": "Шапка: Android: программа",
         "category": "Шаблоны 4PDA",
         "icon": "asset:icons/header.svg",
-        "hint": "Название, версия и спойлеры описания, скриншотов и загрузок; выделение попадёт в описание",
+        "hint": "Шапка темы раздела Android - Программы: версия, описание, требования, ссылки, загрузки",
+        "run": {
+          "insert": "[size=4][b][color=blue]Название программы[/color][/b][/size]\n[size=3][b]Версия: 1.0[/b][/size]\n\n[i]Последнее обновление программы в шапке: [b]ДД.ММ.ГГГГ[/b][/i]\n\n[img]https://адрес_логотипа[/img]\n\n[spoiler=Скриншоты]\n\n[/spoiler]\n\n[b]Краткое описание:[/b]\nОдна строка о том, что делает программа\n\n[b]Описание:[/b]\n$\n\n[b]Требуется Android:[/b] 8.0 и выше\n[b]Русский интерфейс:[/b] Да\n\n[b]Разработчик:[/b] \n[b]Домашняя страница:[/b] [url=\"https://\"]https://[/url]\n[b]Google Play:[/b] [url=\"https://play.google.com/store/apps/details?id=\"]https://play.google.com/store/apps/details?id=[/url]\n\n[color=blue][b]Скачать:[/b][/color]\n[b]Версия: 1.0[/b] [url=\"https://4pda.to/forum/index.php?showtopic=000000&view=findpost&p=000000\"]Описание версии[/url]\n\n[spoiler=Прошлые версии]\n\n[/spoiler]\n"
+        },
         "keys": [
           "Ctrl+Alt+KeyT"
-        ],
+        ]
+      },
+      {
+        "id": "bbforge.4pda-snippets.android-game",
+        "title": "Шапка: Android: игра",
+        "category": "Шаблоны 4PDA",
+        "icon": "star",
+        "hint": "Шапка темы раздела Android - Игры: версия и тип версии, жанр, описание, требования, загрузки",
         "run": {
-          "insert": "[center][size=4][b]Название программы[/b][/size][/center]\n\n[b]Версия:[/b] 1.0\n[b]Последнее обновление:[/b] \n[b]Требуется Android:[/b] \n[b]Русский интерфейс:[/b] Да\n\n[spoiler=Описание]\n$\n[/spoiler]\n\n[spoiler=Скриншоты]\n[/spoiler]\n\n[spoiler=Скачать]\n[url=https://]Версия 1.0[/url]\n[/spoiler]\n"
+          "insert": "[size=4][b][color=blue]Название игры[/color][/b][/size]\n[size=3][b]Версия: 1.0[/b][/size]\n[size=3][b]Тип версии: Release[/b][/size]\n[b]Жанр:[/b] \n\n[i]Последнее обновление игры в шапке: [b]ДД.ММ.ГГГГ[/b][/i]\n\n[img]https://адрес_логотипа[/img]\n\n[spoiler=Скриншоты]\n\n[/spoiler]\n\n[b]Краткое описание:[/b]\nОдна строка об игре\n\n[spoiler=Описание]\n$\n[/spoiler]\n\n[b]Google Play:[/b] [url=\"https://play.google.com/store/apps/details?id=\"]https://play.google.com/store/apps/details?id=[/url]\n\n[b]Русский интерфейс:[/b] Да\n[color=green][b]Системные требования:[/b][/color] Android 8.0 и выше\n\n[color=blue][b]Скачать:[/b][/color]\n[b]Версия: 1.0[/b] [url=\"https://\"]Скачать[/url]\n\n[color=red][b]С запросами на обновление игры обращайтесь в тему [url=\"https://4pda.to/forum/index.php?showtopic=766822\"]Обновите игру![/url][/b][/color]\n\n[spoiler=Прошлые версии]\n\n[/spoiler]\n"
+        }
+      },
+      {
+        "id": "bbforge.4pda-snippets.ios-app",
+        "title": "Шапка: iOS: программа",
+        "category": "Шаблоны 4PDA",
+        "icon": "asset:icons/header.svg",
+        "hint": "Шапка темы раздела iOS - Программы: версия, каталог, описание, App Store, загрузки",
+        "run": {
+          "insert": "[size=4][b][color=blue]Название программы[/color][/b][/size]\n[size=3][b]версия: 1.0[/b][/size]\n[b]Каталог:[/b] \n[i]Последнее обновление программы в шапке: [b]ДД.ММ.ГГГГ[/b][/i]\n\n[img]https://адрес_логотипа[/img]\n\n[spoiler=Скриншоты]\n\n[/spoiler]\n\n[b]Краткое описание:[/b]\nОдна строка о том, что делает программа\n\n[b]Описание:[/b]\n$\n\n[b]Требуется iOS:[/b] 15.0 и выше\n[b]Русский интерфейс:[/b] Да\n[b]Разработчик:[/b] \n[b]App Store:[/b] [url=\"https://apps.apple.com/ru/app/\"]https://apps.apple.com/ru/app/[/url]\n\n[color=blue][b]Скачать:[/b][/color] [url=\"https://4pda.to/forum/index.php?showtopic=000000&view=findpost&p=000000\"]Название 1.0[/url]\n\n[spoiler=[color=crimson]Архив[/color]]\n\n[/spoiler]\n"
+        }
+      },
+      {
+        "id": "bbforge.4pda-snippets.ios-game",
+        "title": "Шапка: iOS: игра",
+        "category": "Шаблоны 4PDA",
+        "icon": "star",
+        "hint": "Шапка темы раздела iOS - Игры: версия, каталог, описание, App Store, загрузки и архив",
+        "run": {
+          "insert": "[size=4][b][color=blue]Название игры[/color][/b][/size]\n[size=3][b]версия: 1.0[/b][/size]\n[b]Каталог:[/b] \n[i]Последнее обновление игры в шапке: [b]ДД.ММ.ГГГГ[/b][/i]\n\n[img]https://адрес_логотипа[/img]\n\n[spoiler=Изображения]\n\n[/spoiler]\n\n[b]Краткое описание[/b]\nОдна строка об игре\n\n[spoiler=Описание]\n$\n[/spoiler]\n\n[b]Домашняя страница:[/b] [url=\"https://\"]https://[/url]\n[b]App Store:[/b] [url=\"https://apps.apple.com/ru/app/\"]https://apps.apple.com/ru/app/[/url]\n\n[color=blue][b]Скачать:[/b][/color] [url=\"https://4pda.to/forum/index.php?showtopic=000000&view=findpost&p=000000\"]Название игры 1.0[/url]\n\n[spoiler=[color=crimson]Архив[/color]]\n\n[/spoiler]\n"
+        }
+      },
+      {
+        "id": "bbforge.4pda-snippets.device-discussion",
+        "title": "Шапка: Устройство: обсуждение",
+        "category": "Шаблоны 4PDA",
+        "icon": "globe",
+        "hint": "Официальный шаблон шапки «Название - Обсуждение» раздела Android - Устройства",
+        "run": {
+          "insert": "[size=4]Обсуждение [b]Название_устройства_в_РФ[/b][/size]\n[img]https://4pda.to/s/as6yz2z159sv0vG8ENlVtz2z0CKph6W3SDjz0RRKVp8ZdQOK1sN.png[/img] [size=1][color=grey]все_названия_устройства_через_запятую[/color][/size]\n[url=\"https://4pda.to/devdb/phones/\"]Описание[/url] | [b]Обсуждение[/b] [url=\"https://4pda.to/forum/index.php?showtopic=000000&view=getnewpost\"]»[/url] | [url=\"https://4pda.to/forum/index.php?showtopic=000000\"]Покупка[/url] [url=\"https://4pda.to/forum/index.php?showtopic=000000&view=getnewpost\"]»[/url] | [url=\"https://4pda.to/forum/index.php?showtopic=000000\"]Аксессуары[/url] [url=\"https://4pda.to/forum/index.php?showtopic=000000&view=getnewpost\"]»[/url] | [url=\"https://4pda.to/forum/index.php?showtopic=000000\"]Брак и ремонт[/url] [url=\"https://4pda.to/forum/index.php?showtopic=000000&view=getnewpost\"]»[/url] | [url=\"https://4pda.to/forum/index.php?showtopic=000000\"]Прошивка[/url] [url=\"https://4pda.to/forum/index.php?showtopic=000000&view=getnewpost\"]»[/url]\n\n[spoiler=Технические характеристики]\n$\n[/spoiler]\n\n[spoiler=Фотографии]\n.\n[/spoiler]\n\n[spoiler=Полезное]\n.\n[/spoiler]\n\n[i][color=green][b]В теме нет куратора, по вопросам наполнения шапки, обращайтесь к [color=#0099FF]модераторам[/color] раздела через кнопку [img]https://4pda.to/s/as6yujbQwMmqTfh1fDLz2NvkuaaTKHSXXVOhvbcRUiz2t1Xbw0.gif[/img] под сообщениями, на которые необходимо добавить ссылки.[/b][/color][/i]\n"
+        }
+      },
+      {
+        "id": "bbforge.4pda-snippets.device-purchase",
+        "title": "Шапка: Устройство: покупка",
+        "category": "Шаблоны 4PDA",
+        "icon": "package",
+        "hint": "Официальный шаблон шапки «Название - Покупка»",
+        "run": {
+          "insert": "[size=4]Покупка [b]Название_устройства_в_РФ[/b][/size]\n[img]https://4pda.to/s/as6yz2z159sv0vG8ENlVtz2z0CKph6W3SDjz0RRKVp8ZdQOK1sN.png[/img] [size=1][color=grey]все_названия_устройства_через_запятую[/color][/size]\n[url=\"https://4pda.to/devdb/phones/\"]Описание[/url] | [url=\"https://4pda.to/forum/index.php?showtopic=000000\"]Обсуждение[/url] [url=\"https://4pda.to/forum/index.php?showtopic=000000&view=getnewpost\"]»[/url] | [url=\"https://4pda.to/forum/index.php?showtopic=000000\"]FAQ[/url] | [b]Покупка[/b] [url=\"https://4pda.to/forum/index.php?showtopic=000000&view=getnewpost\"]»[/url] | [url=\"https://4pda.to/forum/index.php?showtopic=000000\"]Аксессуары[/url] [url=\"https://4pda.to/forum/index.php?showtopic=000000&view=getnewpost\"]»[/url] | [url=\"https://4pda.to/forum/index.php?showtopic=000000\"]Брак и ремонт[/url] [url=\"https://4pda.to/forum/index.php?showtopic=000000&view=getnewpost\"]»[/url] | [url=\"https://4pda.to/forum/index.php?showtopic=000000\"]Прошивка[/url] [url=\"https://4pda.to/forum/index.php?showtopic=000000&view=getnewpost\"]»[/url]\n\n$\n\n[i][color=green][b]В теме нет куратора, по вопросам наполнения шапки, обращайтесь к [color=#0099FF]модераторам[/color] раздела через кнопку [img]https://4pda.to/s/as6yujbQwMmqTfh1fDLz2NvkuaaTKHSXXVOhvbcRUiz2t1Xbw0.gif[/img] под сообщениями, на которые необходимо добавить ссылки.[/b][/color][/i]\n"
+        }
+      },
+      {
+        "id": "bbforge.4pda-snippets.device-accessories",
+        "title": "Шапка: Устройство: аксессуары",
+        "category": "Шаблоны 4PDA",
+        "icon": "puzzle",
+        "hint": "Официальный шаблон шапки «Название - Аксессуары»",
+        "run": {
+          "insert": "[size=4]Аксессуары для [b]Название_устройства_в_РФ[/b][/size]\n[img]https://4pda.to/s/as6yz2z159sv0vG8ENlVtz2z0CKph6W3SDjz0RRKVp8ZdQOK1sN.png[/img] [size=1][color=grey]все_названия_устройства_через_запятую[/color][/size]\n[url=\"https://4pda.to/devdb/phones/\"]Описание[/url] | [url=\"https://4pda.to/forum/index.php?showtopic=000000\"]Обсуждение[/url] [url=\"https://4pda.to/forum/index.php?showtopic=000000&view=getnewpost\"]»[/url] | [url=\"https://4pda.to/forum/index.php?showtopic=000000\"]FAQ[/url] | [url=\"https://4pda.to/forum/index.php?showtopic=000000\"]Покупка[/url] [url=\"https://4pda.to/forum/index.php?showtopic=000000&view=getnewpost\"]»[/url] | [b]Аксессуары[/b] [url=\"https://4pda.to/forum/index.php?showtopic=000000&view=getnewpost\"]»[/url] | [url=\"https://4pda.to/forum/index.php?showtopic=000000\"]Брак и ремонт[/url] [url=\"https://4pda.to/forum/index.php?showtopic=000000&view=getnewpost\"]»[/url] | [url=\"https://4pda.to/forum/index.php?showtopic=000000\"]Прошивка[/url] [url=\"https://4pda.to/forum/index.php?showtopic=000000&view=getnewpost\"]»[/url]\n\n$\n\n[i][color=green][b]В теме нет куратора, по вопросам наполнения шапки, обращайтесь к [color=#0099FF]модераторам[/color] раздела через кнопку [img]https://4pda.to/s/as6yujbQwMmqTfh1fDLz2NvkuaaTKHSXXVOhvbcRUiz2t1Xbw0.gif[/img] под сообщениями, на которые необходимо добавить ссылки.[/b][/color][/i]\n"
+        }
+      },
+      {
+        "id": "bbforge.4pda-snippets.device-repair",
+        "title": "Шапка: Устройство: брак и ремонт",
+        "category": "Шаблоны 4PDA",
+        "icon": "wand",
+        "hint": "Официальный шаблон шапки «Название - Брак и ремонт»",
+        "run": {
+          "insert": "[size=4]Брак и ремонт [b]Название_устройства_в_РФ[/b][/size]\n[img]https://4pda.to/s/as6yz2z159sv0vG8ENlVtz2z0CKph6W3SDjz0RRKVp8ZdQOK1sN.png[/img] [size=1][color=grey]все_названия_устройства_через_запятую[/color][/size]\n[url=\"https://4pda.to/devdb/phones/\"]Описание[/url] | [url=\"https://4pda.to/forum/index.php?showtopic=000000\"]Обсуждение[/url] [url=\"https://4pda.to/forum/index.php?showtopic=000000&view=getnewpost\"]»[/url] | [url=\"https://4pda.to/forum/index.php?showtopic=000000\"]FAQ[/url] | [url=\"https://4pda.to/forum/index.php?showtopic=000000\"]Покупка[/url] [url=\"https://4pda.to/forum/index.php?showtopic=000000&view=getnewpost\"]»[/url] | [url=\"https://4pda.to/forum/index.php?showtopic=000000\"]Аксессуары[/url] [url=\"https://4pda.to/forum/index.php?showtopic=000000&view=getnewpost\"]»[/url] | [b]Брак и ремонт[/b] [url=\"https://4pda.to/forum/index.php?showtopic=000000&view=getnewpost\"]»[/url] | [url=\"https://4pda.to/forum/index.php?showtopic=000000\"]Прошивка[/url] [url=\"https://4pda.to/forum/index.php?showtopic=000000&view=getnewpost\"]»[/url]\n\n$\n\n[i][color=green][b]В теме нет куратора, по вопросам наполнения шапки, обращайтесь к [color=#0099FF]модераторам[/color] раздела через кнопку [img]https://4pda.to/s/as6yujbQwMmqTfh1fDLz2NvkuaaTKHSXXVOhvbcRUiz2t1Xbw0.gif[/img] под сообщениями, на которые необходимо добавить ссылки.[/b][/color][/i]\n"
+        }
+      },
+      {
+        "id": "bbforge.4pda-snippets.device-firmware",
+        "title": "Шапка: Устройство: прошивки",
+        "category": "Шаблоны 4PDA",
+        "icon": "code",
+        "hint": "Шапка темы раздела Android - Прошивки: рубрикатор, важная информация, драйверы, прошивки, инструкции",
+        "run": {
+          "insert": "[size=4][b]Название_устройства_в_РФ - Прошивки[/b][/size]\n[img]https://4pda.to/s/as6yz2z159sv0vG8ENlVtz2z0CKph6W3SDjz0RRKVp8ZdQOK1sN.png[/img] [size=1][color=grey]все_названия_устройства_через_запятую[/color][/size]\n[url=\"https://4pda.to/forum/index.php?showtopic=000000\"]Обсуждение[/url] [url=\"https://4pda.to/forum/index.php?showtopic=000000&view=getnewpost\"]»[/url] | [url=\"https://4pda.to/forum/index.php?showtopic=000000\"]Покупка[/url] [url=\"https://4pda.to/forum/index.php?showtopic=000000&view=getnewpost\"]»[/url] | [url=\"https://4pda.to/forum/index.php?showtopic=000000\"]Аксессуары[/url] [url=\"https://4pda.to/forum/index.php?showtopic=000000&view=getnewpost\"]»[/url] | [b]Прошивки[/b] [url=\"https://4pda.to/forum/index.php?showtopic=000000&view=getnewpost\"]»[/url]\n\n[spoiler=[b][color=red]Важная информация![/color][/b]]\n$\n[/spoiler]\n\n[spoiler=[b][color=royalblue]Драйверы и утилиты[/color][/b]]\n[list]\n[*][url=\"https://4pda.to/forum/index.php?showtopic=383300\"]ADB | fastboot - их использование[/url]\n[/list]\n[/spoiler]\n\n[spoiler=[b][color=royalblue]Прошивки[/color][/b]]\n[list]\n[*]\n[/list]\n[/spoiler]\n\n[spoiler=[b][color=royalblue]Инструкции[/color][/b]]\n[list]\n[*]\n[/list]\n[/spoiler]\n"
+        }
+      },
+      {
+        "id": "bbforge.4pda-snippets.pc-app",
+        "title": "Шапка: ПК: программа",
+        "category": "Шаблоны 4PDA",
+        "icon": "file",
+        "hint": "Шаблон шапки темы о программе для ПК раздела «Компьютеры и периферия»",
+        "run": {
+          "insert": "[size=4][b][color=darkblue]Название программы[/color][/b][/size]\n\n[img]https://адрес_скриншота_или_логотипа[/img]\n\n[b]Описание:[/b]\n$\n\n[b]Возможности:[/b]\n[list]\n[*]пункт 1\n[*]пункт 2\n[*]пункт 3\n[/list]\n\n[b]Операционная система:[/b] Windows 10, 11, macOS, Linux\n\n[b]Домашняя страница:[/b] [url=\"https://\"]Сайт программы[/url]\n\n[b]Скачать:[/b] [url=\"https://\"]Ссылка на официальный сайт[/url]\n\n[spoiler=Скриншоты]\n\n[/spoiler]\n"
         }
       },
       {
@@ -33,6 +123,7 @@
         "title": "Спойлер «Скриншоты»",
         "category": "Шаблоны 4PDA",
         "icon": "image",
+        "hint": "Спойлер для картинок; выделение попадёт внутрь",
         "run": {
           "insert": "[spoiler=Скриншоты]\n$\n[/spoiler]"
         }
@@ -42,6 +133,7 @@
         "title": "Спойлер «Скачать»",
         "category": "Шаблоны 4PDA",
         "icon": "upload",
+        "hint": "Спойлер со ссылкой на файл",
         "run": {
           "insert": "[spoiler=Скачать]\n[url=https://]$[/url]\n[/spoiler]"
         }
@@ -50,64 +142,196 @@
     "ui": [
       {
         "op": "add",
-        "slot": "toolbar.format",
-        "after": "format.spoiler",
+        "slot": "titlebar.menus",
+        "after": "menu.tools",
         "item": {
-          "id": "bbforge.4pda-snippets.header-button",
-          "kind": "button",
-          "command": "bbforge.4pda-snippets.header",
-          "tooltip": "Вставить шаблон шапки темы (Ctrl+Alt+T)",
-          "icon": "asset:icons/header.svg"
+          "id": "bbforge.4pda-snippets.menu",
+          "kind": "menu",
+          "title": "Шаблоны"
         }
       },
       {
         "op": "add",
-        "slot": "sidebar.blocks",
+        "slot": "bbforge.4pda-snippets.menu",
         "item": {
-          "id": "bbforge.4pda-snippets.header-tile",
-          "kind": "button",
-          "command": "bbforge.4pda-snippets.header",
-          "tooltip": "Название, версия, описание, скриншоты, загрузки",
-          "icon": "asset:icons/header.svg"
+          "id": "bbforge.4pda-snippets.menu.android-app",
+          "kind": "command",
+          "command": "bbforge.4pda-snippets.android-app"
         }
       },
       {
         "op": "add",
-        "slot": "sidebar.blocks",
+        "slot": "bbforge.4pda-snippets.menu",
         "item": {
-          "id": "bbforge.4pda-snippets.screenshots-tile",
-          "kind": "button",
-          "command": "bbforge.4pda-snippets.screenshots",
-          "tooltip": "Спойлер для картинок",
-          "icon": "image"
+          "id": "bbforge.4pda-snippets.menu.android-game",
+          "kind": "command",
+          "command": "bbforge.4pda-snippets.android-game"
         }
       },
       {
         "op": "add",
-        "slot": "sidebar.blocks",
+        "slot": "bbforge.4pda-snippets.menu",
         "item": {
-          "id": "bbforge.4pda-snippets.download-tile",
-          "kind": "button",
-          "command": "bbforge.4pda-snippets.download",
-          "tooltip": "Спойлер со ссылкой на файл",
-          "icon": "upload"
-        }
-      },
-      {
-        "op": "add",
-        "slot": "menu.tools",
-        "item": {
-          "id": "bbforge.4pda-snippets.menu-separator",
+          "id": "bbforge.4pda-snippets.menu.sep2",
           "kind": "separator"
         }
       },
       {
         "op": "add",
-        "slot": "menu.tools",
+        "slot": "bbforge.4pda-snippets.menu",
         "item": {
-          "id": "bbforge.4pda-snippets.menu-header",
+          "id": "bbforge.4pda-snippets.menu.ios-app",
           "kind": "command",
-          "command": "bbforge.4pda-snippets.header"
+          "command": "bbforge.4pda-snippets.ios-app"
+        }
+      },
+      {
+        "op": "add",
+        "slot": "bbforge.4pda-snippets.menu",
+        "item": {
+          "id": "bbforge.4pda-snippets.menu.ios-game",
+          "kind": "command",
+          "command": "bbforge.4pda-snippets.ios-game"
+        }
+      },
+      {
+        "op": "add",
+        "slot": "bbforge.4pda-snippets.menu",
+        "item": {
+          "id": "bbforge.4pda-snippets.menu.sep5",
+          "kind": "separator"
+        }
+      },
+      {
+        "op": "add",
+        "slot": "bbforge.4pda-snippets.menu",
+        "item": {
+          "id": "bbforge.4pda-snippets.menu.device-discussion",
+          "kind": "command",
+          "command": "bbforge.4pda-snippets.device-discussion"
+        }
+      },
+      {
+        "op": "add",
+        "slot": "bbforge.4pda-snippets.menu",
+        "item": {
+          "id": "bbforge.4pda-snippets.menu.device-purchase",
+          "kind": "command",
+          "command": "bbforge.4pda-snippets.device-purchase"
+        }
+      },
+      {
+        "op": "add",
+        "slot": "bbforge.4pda-snippets.menu",
+        "item": {
+          "id": "bbforge.4pda-snippets.menu.device-accessories",
+          "kind": "command",
+          "command": "bbforge.4pda-snippets.device-accessories"
+        }
+      },
+      {
+        "op": "add",
+        "slot": "bbforge.4pda-snippets.menu",
+        "item": {
+          "id": "bbforge.4pda-snippets.menu.device-repair",
+          "kind": "command",
+          "command": "bbforge.4pda-snippets.device-repair"
+        }
+      },
+      {
+        "op": "add",
+        "slot": "bbforge.4pda-snippets.menu",
+        "item": {
+          "id": "bbforge.4pda-snippets.menu.device-firmware",
+          "kind": "command",
+          "command": "bbforge.4pda-snippets.device-firmware"
+        }
+      },
+      {
+        "op": "add",
+        "slot": "bbforge.4pda-snippets.menu",
+        "item": {
+          "id": "bbforge.4pda-snippets.menu.sep11",
+          "kind": "separator"
+        }
+      },
+      {
+        "op": "add",
+        "slot": "bbforge.4pda-snippets.menu",
+        "item": {
+          "id": "bbforge.4pda-snippets.menu.pc-app",
+          "kind": "command",
+          "command": "bbforge.4pda-snippets.pc-app"
+        }
+      },
+      {
+        "op": "add",
+        "slot": "bbforge.4pda-snippets.menu",
+        "item": {
+          "id": "bbforge.4pda-snippets.menu.sep13",
+          "kind": "separator"
+        }
+      },
+      {
+        "op": "add",
+        "slot": "bbforge.4pda-snippets.menu",
+        "item": {
+          "id": "bbforge.4pda-snippets.menu.screenshots",
+          "kind": "command",
+          "command": "bbforge.4pda-snippets.screenshots"
+        }
+      },
+      {
+        "op": "add",
+        "slot": "bbforge.4pda-snippets.menu",
+        "item": {
+          "id": "bbforge.4pda-snippets.menu.download",
+          "kind": "command",
+          "command": "bbforge.4pda-snippets.download"
+        }
+      },
+      {
+        "op": "add",
+        "slot": "sidebar.blocks",
+        "item": {
+          "id": "bbforge.4pda-snippets.tile-android-app",
+          "kind": "button",
+          "command": "bbforge.4pda-snippets.android-app",
+          "icon": "asset:icons/header.svg",
+          "tooltip": "Шапка темы раздела Android - Программы: версия, описание, требования, ссылки, загрузки"
+        }
+      },
+      {
+        "op": "add",
+        "slot": "sidebar.blocks",
+        "item": {
+          "id": "bbforge.4pda-snippets.tile-android-game",
+          "kind": "button",
+          "command": "bbforge.4pda-snippets.android-game",
+          "icon": "star",
+          "tooltip": "Шапка темы раздела Android - Игры: версия и тип версии, жанр, описание, требования, загрузки"
+        }
+      },
+      {
+        "op": "add",
+        "slot": "sidebar.blocks",
+        "item": {
+          "id": "bbforge.4pda-snippets.tile-device-discussion",
+          "kind": "button",
+          "command": "bbforge.4pda-snippets.device-discussion",
+          "icon": "globe",
+          "tooltip": "Официальный шаблон шапки «Название - Обсуждение» раздела Android - Устройства"
+        }
+      },
+      {
+        "op": "add",
+        "slot": "sidebar.blocks",
+        "item": {
+          "id": "bbforge.4pda-snippets.tile-device-firmware",
+          "kind": "button",
+          "command": "bbforge.4pda-snippets.device-firmware",
+          "icon": "code",
+          "tooltip": "Шапка темы раздела Android - Прошивки: рубрикатор, важная информация, драйверы, прошивки, инструкции"
         }
       }
     ]

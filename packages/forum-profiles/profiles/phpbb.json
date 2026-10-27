@@ -2,20 +2,106 @@
   "id": "phpbb",
   "name": "phpBB 3",
   "description": "Стандартные BBCode phpBB 3 (без пользовательских тегов форума)",
+  "detect": {
+    "tags": [
+      "flash"
+    ]
+  },
   "tags": [
-    { "name": "b", "label": "Жирный", "blankCheck": true },
-    { "name": "i", "label": "Курсив", "blankCheck": true },
-    { "name": "u", "label": "Подчёркнутый", "blankCheck": true },
-    { "name": "color", "label": "Цвет", "value": "required", "blankCheck": true },
-    { "name": "size", "role": "inline", "label": "Размер, %", "value": "required", "valueFormat": "text", "blankCheck": true, "render": { "element": "span", "style": { "fontSize": "{value}%" } } },
-    { "name": "url", "label": "Ссылка", "value": "optional", "valueFormat": "url" },
-    { "name": "email", "role": "inline", "label": "Почта", "value": "optional", "render": { "element": "u" } },
-    { "name": "img", "label": "Изображение" },
-    { "name": "quote", "label": "Цитата", "value": "optional" },
-    { "name": "code", "label": "Код", "value": "optional" },
-    { "name": "list", "label": "Список", "value": "optional" },
-    { "name": "*", "label": "Пункт" },
-    { "name": "attachment", "role": "media", "label": "Вложение", "value": "required", "render": { "element": "span", "className": "media-placeholder", "caption": "Вложение {value}:" } },
-    { "name": "flash", "role": "media", "label": "Flash", "value": "required", "render": { "element": "span", "className": "media-placeholder", "caption": "Flash" } }
+    {
+      "name": "b",
+      "label": "Жирный",
+      "blankCheck": true
+    },
+    {
+      "name": "i",
+      "label": "Курсив",
+      "blankCheck": true
+    },
+    {
+      "name": "u",
+      "label": "Подчёркнутый",
+      "blankCheck": true
+    },
+    {
+      "name": "color",
+      "label": "Цвет",
+      "value": "required",
+      "blankCheck": true
+    },
+    {
+      "name": "size",
+      "role": "inline",
+      "label": "Размер, %",
+      "value": "required",
+      "valueFormat": "text",
+      "blankCheck": true,
+      "render": {
+        "element": "span",
+        "style": {
+          "fontSize": "{value}%"
+        }
+      }
+    },
+    {
+      "name": "url",
+      "label": "Ссылка",
+      "value": "optional",
+      "valueFormat": "url"
+    },
+    {
+      "name": "email",
+      "role": "inline",
+      "label": "Почта",
+      "value": "optional",
+      "render": {
+        "element": "u"
+      }
+    },
+    {
+      "name": "img",
+      "label": "Изображение"
+    },
+    {
+      "name": "quote",
+      "label": "Цитата",
+      "value": "optional"
+    },
+    {
+      "name": "code",
+      "label": "Код",
+      "value": "optional"
+    },
+    {
+      "name": "list",
+      "label": "Список",
+      "value": "optional"
+    },
+    {
+      "name": "*",
+      "label": "Пункт"
+    },
+    {
+      "name": "attachment",
+      "role": "media",
+      "label": "Вложение",
+      "value": "required",
+      "render": {
+        "element": "span",
+        "className": "media-placeholder",
+        "caption": "Вложение {value}:"
+      }
+    },
+    {
+      "name": "flash",
+      "role": "media",
+      "label": "Flash",
+      "value": "required",
+      "render": {
+        "element": "span",
+        "className": "media-placeholder",
+        "caption": "Flash"
+      }
+    }
   ]
 }

@@ -1,0 +1,60 @@
+{
+  "manifestVersion": 1,
+  "type": "plugin",
+  "id": "bbforge.html-import",
+  "name": "Импорт HTML",
+  "version": "1.0.0",
+  "description": "Превращает HTML в BBCode: шапку, скопированную со страницы 4PDA, или HTML-код поста. Сохраняет спойлеры, цитаты, код, списки, ссылки, картинки, цвета, размеры и выравнивание.",
+  "author": "1VicTim1",
+  "homepage": "https://github.com/1VicTim1/BBForge-plugins",
+  "engine": ">=0.3.0",
+  "permissions": [
+    "converters",
+    "commands",
+    "document.edit",
+    "ui.add"
+  ],
+  "contributes": {
+    "converters": [
+      "converters/html.json"
+    ],
+    "commands": [
+      {
+        "id": "bbforge.html-import.open",
+        "title": "Вставить HTML как BBCode…",
+        "category": "Импорт",
+        "icon": "code",
+        "hint": "Вставка шапки со страницы форума или HTML-кода с переводом в BBCode",
+        "keys": [
+          "Ctrl+Alt+KeyV"
+        ],
+        "run": {
+          "convert": "bbforge.html-import.html"
+        }
+      }
+    ],
+    "ui": [
+      {
+        "op": "add",
+        "slot": "menu.edit",
+        "after": "edit.redo",
+        "item": {
+          "id": "bbforge.html-import.menu",
+          "kind": "command",
+          "command": "bbforge.html-import.open"
+        }
+      },
+      {
+        "op": "add",
+        "slot": "sidebar.blocks",
+        "item": {
+          "id": "bbforge.html-import.tile",
+          "kind": "button",
+          "command": "bbforge.html-import.open",
+          "icon": "code",
+          "tooltip": "Шапка со страницы форума или HTML-код → BBCode"
+        }
+      }
+    ]
+  }
+}

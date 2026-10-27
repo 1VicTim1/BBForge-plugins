@@ -1,0 +1,246 @@
+{
+  "id": "bbforge.html-import.html",
+  "title": "HTML → BBCode",
+  "description": "Шапки и посты 4PDA, а также обычные страницы: оформление, спойлеры, цитаты, код, списки, ссылки и картинки",
+  "hint": "Выделите шапку на странице форума и скопируйте (Ctrl+C) — при вставке сюда сохранится оформление. Можно вставить и HTML-код страницы.",
+  "maps": {
+    "size": {
+      "8pt": "1",
+      "10pt": "2",
+      "12pt": "3",
+      "14pt": "4",
+      "18pt": "5",
+      "24pt": "6",
+      "36pt": "7",
+      "11px": "1",
+      "13px": "2",
+      "16px": "3",
+      "19px": "4",
+      "24px": "5",
+      "32px": "6",
+      "48px": "7",
+      "x-small": "1",
+      "small": "2",
+      "medium": "3",
+      "large": "4",
+      "x-large": "5",
+      "xx-large": "6",
+      "xxx-large": "7",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7"
+    },
+    "align": {
+      "left": "left",
+      "center": "center",
+      "right": "right"
+    }
+  },
+  "rules": [
+    {
+      "match": "script, style, noscript, template, head, title, iframe, object, embed, svg, form, input, button, select, textarea, .post-edit-reason, .signature, .post_footer, .post_action",
+      "skip": true
+    },
+    {
+      "match": "br",
+      "open": "\n",
+      "leaf": true
+    },
+    {
+      "match": "div.post-block.spoil",
+      "open": "[spoiler={bbcode:.block-title}]\n",
+      "close": "\n[/spoiler]",
+      "content": ".block-body",
+      "block": true
+    },
+    {
+      "match": "div.post-block.spoil",
+      "open": "[spoiler]\n",
+      "close": "\n[/spoiler]",
+      "content": ".block-body",
+      "block": true
+    },
+    {
+      "match": "div.post-block.quote",
+      "open": "[quote]\n",
+      "close": "\n[/quote]",
+      "content": ".block-body",
+      "block": true
+    },
+    {
+      "match": "div.post-block.code",
+      "open": "[code]",
+      "close": "[/code]",
+      "content": ".block-body",
+      "raw": true,
+      "block": true
+    },
+    {
+      "match": "div.post-block.hidden",
+      "open": "[hide]",
+      "close": "[/hide]",
+      "content": ".block-body",
+      "block": true
+    },
+    {
+      "match": "img[src]",
+      "open": "[img]{attr:src}[/img]",
+      "leaf": true
+    },
+    {
+      "match": "a[href^='#'], a[href^='javascript:'], a:not([href])"
+    },
+    {
+      "match": "a[href]",
+      "open": "[url=\"{attr:href}\"]",
+      "close": "[/url]"
+    },
+    {
+      "match": "b, strong",
+      "open": "[b]",
+      "close": "[/b]"
+    },
+    {
+      "match": "i, em, cite, dfn",
+      "open": "[i]",
+      "close": "[/i]"
+    },
+    {
+      "match": "u, ins",
+      "open": "[u]",
+      "close": "[/u]"
+    },
+    {
+      "match": "s, strike, del",
+      "open": "[s]",
+      "close": "[/s]"
+    },
+    {
+      "match": "sub",
+      "open": "[sub]",
+      "close": "[/sub]"
+    },
+    {
+      "match": "sup",
+      "open": "[sup]",
+      "close": "[/sup]"
+    },
+    {
+      "match": "[style*='font-size']",
+      "open": "[size={style:font-size|map:size}]",
+      "close": "[/size]"
+    },
+    {
+      "match": "font[size]",
+      "open": "[size={attr:size|map:size}]",
+      "close": "[/size]"
+    },
+    {
+      "match": "[style*='background-color']",
+      "open": "[background={style:background-color|hex}]",
+      "close": "[/background]"
+    },
+    {
+      "match": "font[color]",
+      "open": "[color={attr:color|hex}]",
+      "close": "[/color]"
+    },
+    {
+      "match": "[style*='color']",
+      "open": "[color={style:color|hex}]",
+      "close": "[/color]"
+    },
+    {
+      "match": "[style*='font-family']",
+      "open": "[font={style:font-family|font}]",
+      "close": "[/font]"
+    },
+    {
+      "match": "font[face]",
+      "open": "[font={attr:face|font}]",
+      "close": "[/font]"
+    },
+    {
+      "match": "center",
+      "open": "[center]",
+      "close": "[/center]",
+      "block": true
+    },
+    {
+      "match": "[align]",
+      "open": "[{attr:align|map:align}]",
+      "close": "[/{attr:align|map:align}]",
+      "block": true
+    },
+    {
+      "match": "[style*='text-align']",
+      "open": "[{style:text-align|map:align}]",
+      "close": "[/{style:text-align|map:align}]",
+      "block": true
+    },
+    {
+      "match": "ol",
+      "open": "[list=1]",
+      "close": "\n[/list]",
+      "block": true
+    },
+    {
+      "match": "ul",
+      "open": "[list]",
+      "close": "\n[/list]",
+      "block": true
+    },
+    {
+      "match": "li",
+      "open": "\n[*]"
+    },
+    {
+      "match": "h1, h2",
+      "open": "[size=5][b]",
+      "close": "[/b][/size]",
+      "block": true
+    },
+    {
+      "match": "h3, h4",
+      "open": "[size=4][b]",
+      "close": "[/b][/size]",
+      "block": true
+    },
+    {
+      "match": "h5, h6",
+      "open": "[b]",
+      "close": "[/b]",
+      "block": true
+    },
+    {
+      "match": "blockquote",
+      "open": "[quote]\n",
+      "close": "\n[/quote]",
+      "block": true
+    },
+    {
+      "match": "pre",
+      "open": "[code]",
+      "close": "[/code]",
+      "raw": true,
+      "block": true
+    },
+    {
+      "match": "hr",
+      "open": "\n",
+      "leaf": true
+    },
+    {
+      "match": "td, th",
+      "close": " "
+    },
+    {
+      "match": "p, div, section, article, header, footer, aside, nav, main, table, tbody, thead, tr, dl, dt, dd, figure, figcaption",
+      "block": true
+    }
+  ]
+}
