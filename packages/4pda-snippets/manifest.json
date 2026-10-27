@@ -1,0 +1,115 @@
+{
+  "manifestVersion": 1,
+  "type": "plugin",
+  "id": "bbforge.4pda-snippets",
+  "name": "Шаблоны 4PDA",
+  "version": "1.0.0",
+  "description": "Готовые заготовки для тем 4PDA: шапка программы, спойлеры «Скриншоты» и «Скачать». Команды в палитре, плитки в панели «Блоки» и кнопка на панели форматирования.",
+  "author": "1VicTim1",
+  "homepage": "https://github.com/1VicTim1/BBForge-plugins",
+  "engine": ">=0.3.0",
+  "permissions": [
+    "commands",
+    "document.edit",
+    "ui.add"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "id": "bbforge.4pda-snippets.header",
+        "title": "Шаблон шапки темы",
+        "category": "Шаблоны 4PDA",
+        "icon": "asset:icons/header.svg",
+        "hint": "Название, версия и спойлеры описания, скриншотов и загрузок; выделение попадёт в описание",
+        "keys": [
+          "Ctrl+Alt+KeyT"
+        ],
+        "run": {
+          "insert": "[center][size=4][b]Название программы[/b][/size][/center]\n\n[b]Версия:[/b] 1.0\n[b]Последнее обновление:[/b] \n[b]Требуется Android:[/b] \n[b]Русский интерфейс:[/b] Да\n\n[spoiler=Описание]\n$\n[/spoiler]\n\n[spoiler=Скриншоты]\n[/spoiler]\n\n[spoiler=Скачать]\n[url=https://]Версия 1.0[/url]\n[/spoiler]\n"
+        }
+      },
+      {
+        "id": "bbforge.4pda-snippets.screenshots",
+        "title": "Спойлер «Скриншоты»",
+        "category": "Шаблоны 4PDA",
+        "icon": "image",
+        "run": {
+          "insert": "[spoiler=Скриншоты]\n$\n[/spoiler]"
+        }
+      },
+      {
+        "id": "bbforge.4pda-snippets.download",
+        "title": "Спойлер «Скачать»",
+        "category": "Шаблоны 4PDA",
+        "icon": "upload",
+        "run": {
+          "insert": "[spoiler=Скачать]\n[url=https://]$[/url]\n[/spoiler]"
+        }
+      }
+    ],
+    "ui": [
+      {
+        "op": "add",
+        "slot": "toolbar.format",
+        "after": "format.spoiler",
+        "item": {
+          "id": "bbforge.4pda-snippets.header-button",
+          "kind": "button",
+          "command": "bbforge.4pda-snippets.header",
+          "tooltip": "Вставить шаблон шапки темы (Ctrl+Alt+T)",
+          "icon": "asset:icons/header.svg"
+        }
+      },
+      {
+        "op": "add",
+        "slot": "sidebar.blocks",
+        "item": {
+          "id": "bbforge.4pda-snippets.header-tile",
+          "kind": "button",
+          "command": "bbforge.4pda-snippets.header",
+          "tooltip": "Название, версия, описание, скриншоты, загрузки",
+          "icon": "asset:icons/header.svg"
+        }
+      },
+      {
+        "op": "add",
+        "slot": "sidebar.blocks",
+        "item": {
+          "id": "bbforge.4pda-snippets.screenshots-tile",
+          "kind": "button",
+          "command": "bbforge.4pda-snippets.screenshots",
+          "tooltip": "Спойлер для картинок",
+          "icon": "image"
+        }
+      },
+      {
+        "op": "add",
+        "slot": "sidebar.blocks",
+        "item": {
+          "id": "bbforge.4pda-snippets.download-tile",
+          "kind": "button",
+          "command": "bbforge.4pda-snippets.download",
+          "tooltip": "Спойлер со ссылкой на файл",
+          "icon": "upload"
+        }
+      },
+      {
+        "op": "add",
+        "slot": "menu.tools",
+        "item": {
+          "id": "bbforge.4pda-snippets.menu-separator",
+          "kind": "separator"
+        }
+      },
+      {
+        "op": "add",
+        "slot": "menu.tools",
+        "item": {
+          "id": "bbforge.4pda-snippets.menu-header",
+          "kind": "command",
+          "command": "bbforge.4pda-snippets.header"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "manifestVersion": 1,
+  "type": "plugin",
+  "id": "bbforge.forum-profiles",
+  "name": "Профили форумов",
+  "version": "1.0.0",
+  "description": "Профили разметки XenForo 2, phpBB 3 и SMF 2.1: проверка документа, подсветка, конструктор и предпросмотр по тегам выбранного форума. Если установлен «Выбор профиля форума», добавляет в его список пункт управления профилями.",
+  "author": "1VicTim1",
+  "homepage": "https://github.com/1VicTim1/BBForge-plugins",
+  "engine": ">=0.3.0",
+  "permissions": [
+    "profiles",
+    "ui.add",
+    "commands"
+  ],
+  "contributes": {
+    "profiles": [
+      "profiles/xenforo.json",
+      "profiles/phpbb.json",
+      "profiles/smf.json"
+    ],
+    "commands": [
+      {
+        "id": "bbforge.forum-profiles.manage",
+        "title": "Управление профилями форумов…",
+        "category": "Профиль",
+        "icon": "puzzle",
+        "run": {
+          "command": "app.plugins"
+        }
+      }
+    ],
+    "ui": [
+      {
+        "op": "add",
+        "slot": "bbforge.profile-selector.options",
+        "item": {
+          "id": "bbforge.forum-profiles.manage-option",
+          "kind": "option",
+          "title": "Другие форумы…",
+          "command": "bbforge.forum-profiles.manage"
+        }
+      }
+    ]
+  }
+}

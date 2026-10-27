@@ -1,0 +1,37 @@
+{
+  "manifestVersion": 1,
+  "type": "plugin",
+  "id": "bbforge.profile-selector",
+  "name": "Выбор профиля форума",
+  "version": "1.0.0",
+  "description": "Список профилей форумов в строке состояния. Другие плагины добавляют в него свои пункты через точку расширения bbforge.profile-selector.options.",
+  "author": "1VicTim1",
+  "homepage": "https://github.com/1VicTim1/BBForge-plugins",
+  "engine": ">=0.3.0",
+  "permissions": ["ui.add", "ui.slots", "profiles.select", "commands"],
+  "contributes": {
+    "slots": [
+      { "id": "bbforge.profile-selector.options", "title": "Дополнительные пункты списка профилей" }
+    ],
+    "ui": [
+      {
+        "op": "add",
+        "slot": "statusbar.right",
+        "before": "status.profile",
+        "item": {
+          "id": "bbforge.profile-selector.select",
+          "kind": "select",
+          "title": "Профиль форума",
+          "tooltip": "Набор тегов, по которому проверяется документ",
+          "bind": "profile",
+          "source": "profiles",
+          "itemsSlot": "bbforge.profile-selector.options"
+        }
+      },
+      { "op": "add", "slot": "menu.tools", "after": "app.plugins", "item": { "id": "bbforge.profile-selector.default-entry", "kind": "command", "command": "bbforge.profile-selector.default" } }
+    ],
+    "commands": [
+      { "id": "bbforge.profile-selector.default", "title": "Профиль форума: 4PDA", "category": "Профиль", "icon": "globe", "run": { "setProfile": "4pda" } }
+    ]
+  }
+}

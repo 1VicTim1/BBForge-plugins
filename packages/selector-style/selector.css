@@ -1,0 +1,20 @@
+/* bbforge.selector-style: the profile list from bbforge.profile-selector as an accent pill. */
+[data-ui-id="bbforge.profile-selector.select"].profile-pill .select-trigger {
+  min-width: 0;
+  height: 18px;
+  padding: 0 4px 0 8px;
+  color: var(--accent);
+  font-weight: 600;
+  background: var(--accent-subtle);
+  border: 1px solid transparent;
+  border-radius: 9px;
+}
+[data-ui-id="bbforge.profile-selector.select"].profile-pill .select-trigger:hover {
+  border-color: var(--accent);
+}
+[data-ui-id="bbforge.profile-selector.select"].profile-pill .select-trigger .ui-icon {
+  color: var(--accent);
+}
+[data-ui-id="bbforge.profile-selector.select"].profile-pill .select-popup {
+  min-width: 180px;
+}

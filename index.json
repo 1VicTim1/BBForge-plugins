@@ -1,0 +1,79 @@
+{
+  "packages": [
+    {
+      "author": "1VicTim1",
+      "dependencies": {},
+      "description": "Готовые заготовки для тем 4PDA: шапка программы, спойлеры «Скриншоты» и «Скачать». Команды в палитре, плитки в панели «Блоки» и кнопка на панели форматирования.",
+      "file": "dist/bbforge.4pda-snippets-1.0.0.zip",
+      "id": "bbforge.4pda-snippets",
+      "name": "Шаблоны 4PDA",
+      "permissions": [
+        "commands",
+        "document.edit",
+        "ui.add"
+      ],
+      "sha256": "70311ab8e3a485b3fa0d35fa4f82ae5faa9229ce4c56617e586707a62ebd88f9",
+      "signer": "1VicTim1",
+      "size": 1821,
+      "type": "plugin",
+      "version": "1.0.0"
+    },
+    {
+      "author": "1VicTim1",
+      "dependencies": {},
+      "description": "Профили разметки XenForo 2, phpBB 3 и SMF 2.1: проверка документа, подсветка, конструктор и предпросмотр по тегам выбранного форума. Если установлен «Выбор профиля форума», добавляет в его список пункт управления профилями.",
+      "file": "dist/bbforge.forum-profiles-1.0.0.zip",
+      "id": "bbforge.forum-profiles",
+      "name": "Профили форумов",
+      "permissions": [
+        "profiles",
+        "ui.add",
+        "commands"
+      ],
+      "sha256": "cb56ae27b57096f52aa8470cae0d74641b4f8157365d27fbdadf418d0c4b6557",
+      "signer": "1VicTim1",
+      "size": 3727,
+      "type": "plugin",
+      "version": "1.0.0"
+    },
+    {
+      "author": "1VicTim1",
+      "dependencies": {},
+      "description": "Список профилей форумов в строке состояния. Другие плагины добавляют в него свои пункты через точку расширения bbforge.profile-selector.options.",
+      "file": "dist/bbforge.profile-selector-1.0.0.zip",
+      "id": "bbforge.profile-selector",
+      "name": "Выбор профиля форума",
+      "permissions": [
+        "ui.add",
+        "ui.slots",
+        "profiles.select",
+        "commands"
+      ],
+      "sha256": "75915fc690bd13fac24efd6d8ebdf29fd27302f3a48091ff844403a5bf58aa7f",
+      "signer": "1VicTim1",
+      "size": 1140,
+      "type": "plugin",
+      "version": "1.0.0"
+    },
+    {
+      "author": "1VicTim1",
+      "dependencies": {
+        "bbforge.profile-selector": "^1.0.0"
+      },
+      "description": "Показывает список профилей форума как акцентную метку со значком и убирает дублирующую надпись профиля из строки состояния.",
+      "file": "dist/bbforge.selector-style-1.0.0.zip",
+      "id": "bbforge.selector-style",
+      "name": "Оформление выбора профиля",
+      "permissions": [
+        "styles",
+        "ui.modify"
+      ],
+      "sha256": "4b7c11b2373f80ef9197a401190289b7db76b3049efcf2ed2098c17633599758",
+      "signer": "1VicTim1",
+      "size": 1273,
+      "type": "plugin",
+      "version": "1.0.0"
+    }
+  ],
+  "version": 1
+}

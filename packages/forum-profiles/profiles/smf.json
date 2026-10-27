@@ -1,0 +1,211 @@
+{
+  "id": "smf",
+  "name": "SMF 2.1",
+  "description": "Стандартные BBCode Simple Machines Forum 2.1",
+  "tags": [
+    {
+      "name": "b",
+      "label": "Жирный",
+      "blankCheck": true
+    },
+    {
+      "name": "i",
+      "label": "Курсив",
+      "blankCheck": true
+    },
+    {
+      "name": "u",
+      "label": "Подчёркнутый",
+      "blankCheck": true
+    },
+    {
+      "name": "s",
+      "label": "Зачёркнутый",
+      "blankCheck": true
+    },
+    {
+      "name": "sub",
+      "label": "Нижний индекс",
+      "blankCheck": true
+    },
+    {
+      "name": "sup",
+      "label": "Верхний индекс",
+      "blankCheck": true
+    },
+    {
+      "name": "color",
+      "label": "Цвет",
+      "value": "required",
+      "blankCheck": true
+    },
+    {
+      "name": "font",
+      "label": "Шрифт",
+      "value": "required",
+      "valueFormat": "font",
+      "blankCheck": true
+    },
+    {
+      "name": "size",
+      "role": "inline",
+      "label": "Размер",
+      "value": "required",
+      "valueFormat": "text",
+      "blankCheck": true,
+      "render": {
+        "element": "span",
+        "style": {
+          "fontSize": "{value}"
+        }
+      }
+    },
+    {
+      "name": "url",
+      "label": "Ссылка",
+      "value": "optional",
+      "valueFormat": "url"
+    },
+    {
+      "name": "iurl",
+      "as": "url",
+      "label": "Ссылка в этом окне",
+      "value": "optional",
+      "valueFormat": "url"
+    },
+    {
+      "name": "email",
+      "role": "inline",
+      "label": "Почта",
+      "value": "optional",
+      "render": {
+        "element": "u"
+      }
+    },
+    {
+      "name": "img",
+      "label": "Изображение"
+    },
+    {
+      "name": "quote",
+      "label": "Цитата",
+      "value": "optional"
+    },
+    {
+      "name": "code",
+      "label": "Код",
+      "value": "optional"
+    },
+    {
+      "name": "php",
+      "role": "block",
+      "label": "PHP-код",
+      "raw": true,
+      "render": {
+        "element": "pre",
+        "className": "bb-code"
+      }
+    },
+    {
+      "name": "nobbc",
+      "role": "inline",
+      "label": "Без разметки",
+      "raw": true,
+      "render": {
+        "element": "span"
+      }
+    },
+    {
+      "name": "list",
+      "label": "Список",
+      "value": "optional"
+    },
+    {
+      "name": "li",
+      "as": "*",
+      "label": "Пункт"
+    },
+    {
+      "name": "*",
+      "label": "Пункт"
+    },
+    {
+      "name": "left",
+      "label": "Влево",
+      "blankCheck": true
+    },
+    {
+      "name": "center",
+      "label": "По центру",
+      "blankCheck": true
+    },
+    {
+      "name": "right",
+      "label": "Вправо",
+      "blankCheck": true
+    },
+    {
+      "name": "pre",
+      "role": "block",
+      "label": "Преформатированный",
+      "render": {
+        "element": "pre"
+      }
+    },
+    {
+      "name": "tt",
+      "role": "inline",
+      "label": "Моноширинный",
+      "render": {
+        "element": "code"
+      }
+    },
+    {
+      "name": "hr",
+      "role": "block",
+      "label": "Линия",
+      "leaf": true,
+      "render": {
+        "element": "div",
+        "style": {
+          "border": "1px solid #8888",
+          "margin": "8px 0"
+        }
+      }
+    },
+    {
+      "name": "table",
+      "role": "block",
+      "label": "Таблица",
+      "render": {
+        "element": "div",
+        "style": {
+          "display": "table"
+        }
+      }
+    },
+    {
+      "name": "tr",
+      "role": "block",
+      "label": "Строка таблицы",
+      "render": {
+        "element": "div",
+        "style": {
+          "display": "table-row"
+        }
+      }
+    },
+    {
+      "name": "td",
+      "role": "block",
+      "label": "Ячейка",
+      "render": {
+        "element": "div",
+        "style": {
+          "display": "table-cell",
+          "padding": "2px 6px"
+        }
+      }
+    }
+  ]
+}
