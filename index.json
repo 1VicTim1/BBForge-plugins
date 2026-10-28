@@ -58,6 +58,31 @@
     {
       "author": "1VicTim1",
       "dependencies": {},
+      "description": "Показывает картинки из [img] в предпросмотре и миниатюры в конструкторе вместо заглушек. Загружает только с перечисленных сайтов хранения картинок (4PDA, imgur, ImgBB, Postimages, Fastpic, Imageban, GitHub) и без кук; остальные адреса остаются заглушками.",
+      "file": "dist/bbforge.image-preview-1.0.0.zip",
+      "id": "bbforge.image-preview",
+      "name": "Предпросмотр картинок",
+      "permissions": [
+        "scripts",
+        "network:4pda.to",
+        "network:4pda.ru",
+        "network:imgur.com",
+        "network:ibb.co",
+        "network:postimg.cc",
+        "network:fastpic.org",
+        "network:imageban.ru",
+        "network:githubusercontent.com",
+        "network:github.com"
+      ],
+      "sha256": "863b7292cc2c9ed387694f1976c75f216379318eaddd85736e24a8149ba2a4a5",
+      "signer": "1VicTim1",
+      "size": 1334,
+      "type": "plugin",
+      "version": "1.0.0"
+    },
+    {
+      "author": "1VicTim1",
+      "dependencies": {},
       "description": "Список профилей форумов в строке состояния, оформленный как акцентная метка: «Автоматически» (профиль определяется по тегам и ссылкам документа) или конкретный форум. Заменяет обычную надпись профиля. Другие плагины добавляют пункты через точку расширения bbforge.profile-selector.options.",
       "file": "dist/bbforge.profile-selector-2.0.0.zip",
       "id": "bbforge.profile-selector",

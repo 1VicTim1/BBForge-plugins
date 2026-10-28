@@ -1,0 +1,29 @@
+{
+  "manifestVersion": 1,
+  "type": "plugin",
+  "id": "bbforge.image-preview",
+  "name": "Предпросмотр картинок",
+  "version": "1.0.0",
+  "description": "Показывает картинки из [img] в предпросмотре и миниатюры в конструкторе вместо заглушек. Загружает только с перечисленных сайтов хранения картинок (4PDA, imgur, ImgBB, Postimages, Fastpic, Imageban, GitHub) и без кук; остальные адреса остаются заглушками.",
+  "author": "1VicTim1",
+  "homepage": "https://github.com/1VicTim1/BBForge-plugins",
+  "engine": ">=0.4.0",
+  "main": "main.js",
+  "permissions": [
+    "scripts",
+    "network:4pda.to",
+    "network:4pda.ru",
+    "network:imgur.com",
+    "network:ibb.co",
+    "network:postimg.cc",
+    "network:fastpic.org",
+    "network:imageban.ru",
+    "network:githubusercontent.com",
+    "network:github.com"
+  ],
+  "contributes": {
+    "imagePreview": {
+      "script": "preview"
+    }
+  }
+}
