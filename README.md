@@ -27,3 +27,16 @@ build.sh            пересборка dist/ и index.json
 3. Закоммитьте `packages/`, `dist/` и `index.json`.
 
 Формат манифеста, разрешения и id элементов интерфейса описаны в [docs/plugins.md](https://github.com/1VicTim1/BBForge/blob/main/docs/plugins.md).
+
+## Доверенные разработчики
+
+`trusted-keys.json` — список ключей, пакеты с которыми BBForge ставит как доверенные. Список подписан корневым ключом, вшитым в BBForge (`trusted-keys.json.sig`); программа скачивает его при запуске, проверяет подпись и хранит последнюю проверенную копию. Изменить список без корневого ключа нельзя, даже с доступом к репозиторию.
+
+Добавить разработчика или отозвать ключ:
+
+1. Разработчик присылает открытый ключ: `bbforge-pack pubkey его-ключ.json`.
+2. Добавьте его в `keys` (или открытый ключ в `revoked`) и увеличьте `serial`: список с меньшим `serial`, чем уже сохранённый у пользователя, BBForge не примет.
+3. `bbforge-pack sign-keys trusted-keys.json --key ~/.config/bbforge/signing-key.json`
+4. Закоммитьте `trusted-keys.json` и `trusted-keys.json.sig`.
+
+Новый релиз BBForge для этого не нужен.
