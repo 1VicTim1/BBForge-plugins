@@ -1,0 +1,15 @@
+{
+  "manifestVersion": 1,
+  "type": "plugin",
+  "id": "bbforge.dictionary-ru",
+  "name": "Русский словарь",
+  "version": "1.0.0",
+  "description": "Словарь Hunspell для проверки орфографии русского текста (проект LibreOffice, © 1997–2008 Alexander I. Lebedev, BSD — см. LICENSE.txt). Только данные, без кода.",
+  "author": "1VicTim1",
+  "homepage": "https://github.com/1VicTim1/BBForge-plugins",
+  "engine": ">=0.4.1",
+  "permissions": ["dictionaries"],
+  "contributes": {
+    "dictionaries": [{ "language": "ru", "name": "Русский", "aff": "ru_RU.aff", "dic": "ru_RU.dic" }]
+  }
+}

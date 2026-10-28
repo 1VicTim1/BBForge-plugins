@@ -1,0 +1,31 @@
+{
+  "manifestVersion": 1,
+  "type": "plugin",
+  "id": "bbforge.languagetool",
+  "name": "LanguageTool",
+  "version": "1.0.0",
+  "description": "Грамматика, пунктуация и стиль текста через сервис LanguageTool: замечания подчёркиваются синим, исправления — по правому клику. По умолчанию — бесплатный сервер languagetool.org (текст абзацев между тегами отправляется туда); можно указать свой сервер (в том числе http://localhost:8081) или ключ LanguageTool Premium. Настройки — в палитре команд: «LanguageTool: …».",
+  "author": "1VicTim1",
+  "homepage": "https://github.com/1VicTim1/BBForge-plugins",
+  "engine": ">=0.4.1",
+  "main": "main.js",
+  "permissions": [
+    "scripts",
+    "document.read",
+    "storage",
+    "commands",
+    "network:languagetool.org",
+    "network:languagetoolplus.com",
+    "network.custom"
+  ],
+  "contributes": {
+    "textCheck": { "script": "check", "title": "LanguageTool" },
+    "commands": [
+      { "id": "bbforge.languagetool.server", "title": "LanguageTool: сервер…", "category": "Проверка текста", "hint": "Бесплатный сервер languagetool.org или свой", "run": { "script": "chooseServer" } },
+      { "id": "bbforge.languagetool.language", "title": "LanguageTool: язык…", "category": "Проверка текста", "hint": "Определять автоматически или задать язык", "run": { "script": "chooseLanguage" } },
+      { "id": "bbforge.languagetool.premium", "title": "LanguageTool: ключ Premium…", "category": "Проверка текста", "hint": "Имя пользователя и API-ключ LanguageTool Premium", "run": { "script": "choosePremium" } },
+      { "id": "bbforge.languagetool.spelling", "title": "LanguageTool: опечатки — показывать", "category": "Проверка текста", "hint": "Показывать ли опечатки от LanguageTool (их проверяют и словари)", "run": { "script": "toggleSpelling" } },
+      { "id": "bbforge.languagetool.picky", "title": "LanguageTool: строгая проверка — выкл", "category": "Проверка текста", "hint": "Больше замечаний о стиле", "run": { "script": "togglePicky" } }
+    ]
+  }
+}

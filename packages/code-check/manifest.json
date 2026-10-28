@@ -1,0 +1,16 @@
+{
+  "manifestVersion": 1,
+  "type": "plugin",
+  "id": "bbforge.code-check",
+  "name": "Проверка кода",
+  "version": "1.0.0",
+  "description": "Проверяет содержимое [code]: JSON (запятые, кавычки, скобки; комментарии — предупреждением), XML (незакрытые и перепутанные теги, атрибуты без кавычек, & без &amp;), HTML (незакрытые теги с учётом <br>, <img> и т. п.) и JavaScript (синтаксис, разбор acorn). Язык — из [code=json] / [code=xml] / [code=html] / [code=js] или по виду текста; остальной код не проверяется. Работает без сети.",
+  "author": "1VicTim1",
+  "homepage": "https://github.com/1VicTim1/BBForge-plugins",
+  "engine": ">=0.4.1",
+  "main": "main.js",
+  "permissions": ["scripts", "document.read"],
+  "contributes": {
+    "codeCheck": { "script": "check", "title": "Проверка кода" }
+  }
+}

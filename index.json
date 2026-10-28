@@ -21,6 +21,55 @@
     {
       "author": "1VicTim1",
       "dependencies": {},
+      "description": "Проверяет содержимое [code]: JSON (запятые, кавычки, скобки; комментарии — предупреждением), XML (незакрытые и перепутанные теги, атрибуты без кавычек, & без &amp;), HTML (незакрытые теги с учётом <br>, <img> и т. п.) и JavaScript (синтаксис, разбор acorn). Язык — из [code=json] / [code=xml] / [code=html] / [code=js] или по виду текста; остальной код не проверяется. Работает без сети.",
+      "file": "dist/bbforge.code-check-1.0.0.zip",
+      "id": "bbforge.code-check",
+      "name": "Проверка кода",
+      "permissions": [
+        "scripts",
+        "document.read"
+      ],
+      "sha256": "78d41384fd8853ad8650bd0fa575b86e370c2ec595b859c82cfd69e2d38e8870",
+      "signer": "1VicTim1",
+      "size": 61993,
+      "type": "plugin",
+      "version": "1.0.0"
+    },
+    {
+      "author": "1VicTim1",
+      "dependencies": {},
+      "description": "Словарь Hunspell для проверки орфографии английского текста (американский вариант, SCOWL из проекта LibreOffice, © 2000–2018 Kevin Atkinson и др. — см. LICENSE.txt). Только данные, без кода.",
+      "file": "dist/bbforge.dictionary-en-1.0.0.zip",
+      "id": "bbforge.dictionary-en",
+      "name": "Английский словарь",
+      "permissions": [
+        "dictionaries"
+      ],
+      "sha256": "1c9d0136f49a49775489a3e06d14a60c3d942feb56430f96b21dd549cc2b9f8c",
+      "signer": "1VicTim1",
+      "size": 199599,
+      "type": "plugin",
+      "version": "1.0.0"
+    },
+    {
+      "author": "1VicTim1",
+      "dependencies": {},
+      "description": "Словарь Hunspell для проверки орфографии русского текста (проект LibreOffice, © 1997–2008 Alexander I. Lebedev, BSD — см. LICENSE.txt). Только данные, без кода.",
+      "file": "dist/bbforge.dictionary-ru-1.0.0.zip",
+      "id": "bbforge.dictionary-ru",
+      "name": "Русский словарь",
+      "permissions": [
+        "dictionaries"
+      ],
+      "sha256": "2b9edc097b077cd291310827024cd329ade8b608c8404d446ebae0a1587e0680",
+      "signer": "1VicTim1",
+      "size": 608188,
+      "type": "plugin",
+      "version": "1.0.0"
+    },
+    {
+      "author": "1VicTim1",
+      "dependencies": {},
       "description": "Профили разметки XenForo 2, phpBB 3 и SMF 2.1: проверка документа, подсветка, конструктор и предпросмотр по тегам выбранного форума. Профили умеют определяться автоматически по характерным тегам документа. В списке «Выбора профиля форума» появляется пункт «Другие форумы…».",
       "file": "dist/bbforge.forum-profiles-1.1.0.zip",
       "id": "bbforge.forum-profiles",
@@ -77,6 +126,28 @@
       "sha256": "863b7292cc2c9ed387694f1976c75f216379318eaddd85736e24a8149ba2a4a5",
       "signer": "1VicTim1",
       "size": 1334,
+      "type": "plugin",
+      "version": "1.0.0"
+    },
+    {
+      "author": "1VicTim1",
+      "dependencies": {},
+      "description": "Грамматика, пунктуация и стиль текста через сервис LanguageTool: замечания подчёркиваются синим, исправления — по правому клику. По умолчанию — бесплатный сервер languagetool.org (текст абзацев между тегами отправляется туда); можно указать свой сервер (в том числе http://localhost:8081) или ключ LanguageTool Premium. Настройки — в палитре команд: «LanguageTool: …».",
+      "file": "dist/bbforge.languagetool-1.0.0.zip",
+      "id": "bbforge.languagetool",
+      "name": "LanguageTool",
+      "permissions": [
+        "scripts",
+        "document.read",
+        "storage",
+        "commands",
+        "network:languagetool.org",
+        "network:languagetoolplus.com",
+        "network.custom"
+      ],
+      "sha256": "a781d2d46205461fadb57cdc1e1ace21e8f17ba660777d8723c9c3ead80aeef7",
+      "signer": "1VicTim1",
+      "size": 4248,
       "type": "plugin",
       "version": "1.0.0"
     },

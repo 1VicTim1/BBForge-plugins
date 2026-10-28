@@ -1,0 +1,15 @@
+{
+  "manifestVersion": 1,
+  "type": "plugin",
+  "id": "bbforge.dictionary-en",
+  "name": "Английский словарь",
+  "version": "1.0.0",
+  "description": "Словарь Hunspell для проверки орфографии английского текста (американский вариант, SCOWL из проекта LibreOffice, © 2000–2018 Kevin Atkinson и др. — см. LICENSE.txt). Только данные, без кода.",
+  "author": "1VicTim1",
+  "homepage": "https://github.com/1VicTim1/BBForge-plugins",
+  "engine": ">=0.4.1",
+  "permissions": ["dictionaries"],
+  "contributes": {
+    "dictionaries": [{ "language": "en", "name": "English (US)", "aff": "en_US.aff", "dic": "en_US.dic" }]
+  }
+}

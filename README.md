@@ -8,6 +8,10 @@
 | `bbforge.forum-profiles` — Профили форумов | Профили XenForo 2, phpBB 3 и SMF 2.1 с подсказками для автоопределения и пункт «Другие форумы…» в списке селектора | `profiles`, `ui.add`, `commands` |
 | `bbforge.4pda-snippets` — Шаблоны 4PDA | Шапки тем: Android и iOS (программы, игры), устройства (обсуждение, покупка, аксессуары, брак и ремонт, прошивки), программы для ПК; меню «Шаблоны», палитра, плитки | `commands`, `document.edit`, `ui.add` |
 | `bbforge.image-preview` — Предпросмотр картинок | Картинки из `[img]` в предпросмотре и миниатюры в конструкторе; загружает только с сайтов хранения картинок из своих разрешений | `scripts`, `network:4pda.to`, `network:imgur.com` и др. |
+| `bbforge.dictionary-ru` — Русский словарь | Словарь Hunspell для проверки орфографии (LibreOffice, BSD) | `dictionaries` |
+| `bbforge.dictionary-en` — Английский словарь | Словарь Hunspell, американский вариант (SCOWL) | `dictionaries` |
+| `bbforge.languagetool` — LanguageTool | Грамматика, пунктуация и стиль через LanguageTool: бесплатный сервер, свой (в том числе `http://localhost:8081`) или Premium; синие подчёркивания и исправления по правому клику | `scripts`, `document.read`, `storage`, `commands`, `network:languagetool.org`, `network:languagetoolplus.com`, `network.custom` |
+| `bbforge.code-check` — Проверка кода | Ошибки в `[code]`: JSON, XML, HTML, JavaScript (acorn); без сети | `scripts`, `document.read` |
 | `bbforge.html-import` — Импорт HTML | Шапка, скопированная со страницы 4PDA, или HTML-код → BBCode: спойлеры, цитаты, код, списки, ссылки, картинки, цвета, размеры | `converters`, `commands`, `document.edit`, `ui.add` |
 
 `profile-selector` и `forum-profiles` показывают, как пакеты работают вместе: первый добавляет селектор и объявляет точку расширения, второй наполняет его профилями и своим пунктом.
@@ -16,6 +20,7 @@
 
 ```
 packages/<папка>/   исходники пакета: manifest.json и файлы
+sources/code-check/ исходники проверки кода; build.sh собирает packages/code-check/main.js
 dist/               подписанные архивы <id>-<version>.zip
 index.json          каталог (bbforge-pack index)
 build.sh            пересборка dist/ и index.json
