@@ -6336,12 +6336,50 @@ function checkJavaScript(code) {
   return [];
 }
 
+// ---- Скобки в любом коде ----
+// Код, похожий на программу (Rust, C, Java, Kotlin, Go, PHP, Python, shell…): только парность
+// ( ) [ ] { } без строк и комментариев. Предупреждения, не ошибки: язык неизвестен.
+const LOOKS_LIKE_CODE = /(\bfn\s+\w+\s*\(|\bfunc\s+\w+|\bfunction\b|\bdef\s+\w+\s*\(|\bclass\s+\w+|#include\b|\bpublic\s+(static\s+)?\w+|\bimport\s+[\w.]+;|\b(let|const|var|val)\s+\w+\s*[=:]|\bif\s*\(.*\)\s*\{|=>|->)/;
+const PAIRS = { ")": "(", "]": "[", "}": "{" };
+function checkBrackets(code) {
+  const stack = [], problems = [];
+  const hashComments = !/#include|#define|#if|#pragma/.test(code) && (/^\s*#/m.test(code) || /\bdef\s+\w+\s*\(.*\)\s*:/.test(code));
+  // In Rust 'a is a lifetime: only short 'x' and '\n' are characters there.
+  const rust = /\bfn\s+\w+/.test(code);
+  for (let at = 0; at < code.length; at++) {
+    const c = code[at];
+    if (c === "/" && code[at + 1] === "/") { at = code.indexOf("\n", at); if (at < 0) break; continue; }
+    if (c === "/" && code[at + 1] === "*") { const end = code.indexOf("*/", at + 2); if (end < 0) break; at = end + 1; continue; }
+    if (c === "#" && hashComments) { at = code.indexOf("\n", at); if (at < 0) break; continue; }
+    if (c === "'" && rust && !/^'(\\.[^']{0,7}|[^'\\])'/.test(code.slice(at, at + 11))) continue;
+    if (c === '"' || c === "`" || (c === "'" && !/\w/.test(code[at - 1] || ""))) {
+      // A quote that is not closed on its line is an apostrophe or a lifetime ('a), not a string.
+      const lineEnd = c === "`" ? code.length : (code.indexOf("\n", at) + 1 || code.length);
+      let end = at + 1;
+      while (end < lineEnd && code[end] !== c) end += code[end] === "\\" ? 2 : 1;
+      if (end < lineEnd) at = end;
+      continue;
+    }
+    if (c === "(" || c === "[" || c === "{") stack.push({ c, at });
+    else if (c in PAIRS) {
+      const top = stack[stack.length - 1];
+      if (top && top.c === PAIRS[c]) stack.pop();
+      else if (top) { problems.push({ offset: at, length: 1, message: `«${c}» закрывает «${top.c}» из строки ${code.slice(0, top.at).split("\n").length}`, severity: "warning" }); stack.pop(); }
+      else problems.push({ offset: at, length: 1, message: `Лишняя «${c}»: нет открывающей`, severity: "warning" });
+    }
+  }
+  for (const item of stack) problems.push({ offset: item.at, length: 1, message: `«${item.c}» не закрыта`, severity: "warning" });
+  return problems.slice(0, 20);
+}
+
 exports.check = async (bb, { code, language }) => {
   const kind = (language && LANGUAGES[language.toLowerCase()]) || (language ? null : detect(code));
   if (kind === "json") return checkJson(code);
   if (kind === "xml") return checkMarkup(code, false);
   if (kind === "html") return checkMarkup(code, true);
   if (kind === "javascript") return checkJavaScript(code);
+  if (!kind && LOOKS_LIKE_CODE.test(code)) return checkBrackets(code);
   return [];
 };
 exports._detect = detect;
+exports._brackets = checkBrackets;

@@ -21,19 +21,19 @@
     {
       "author": "1VicTim1",
       "dependencies": {},
-      "description": "Проверяет содержимое [code]: JSON (запятые, кавычки, скобки; комментарии — предупреждением), XML (незакрытые и перепутанные теги, атрибуты без кавычек, & без &amp;), HTML (незакрытые теги с учётом <br>, <img> и т. п.) и JavaScript (синтаксис, разбор acorn). Язык — из [code=json] / [code=xml] / [code=html] / [code=js] или по виду текста; остальной код не проверяется. Работает без сети.",
-      "file": "dist/bbforge.code-check-1.0.0.zip",
+      "description": "Проверяет содержимое [code]: JSON (запятые, кавычки, скобки; комментарии — предупреждением), XML (незакрытые и перепутанные теги, атрибуты без кавычек, & без &amp;), HTML (незакрытые теги с учётом <br>, <img> и т. п.), JavaScript (синтаксис, разбор acorn) и парность скобок в коде на других языках (Rust, C, Java, Python…). Язык — из [code=json] / [code=xml] / [code=html] / [code=js] или по виду текста; остальной код не проверяется. Работает без сети.",
+      "file": "dist/bbforge.code-check-1.1.0.zip",
       "id": "bbforge.code-check",
       "name": "Проверка кода",
       "permissions": [
         "scripts",
         "document.read"
       ],
-      "sha256": "78d41384fd8853ad8650bd0fa575b86e370c2ec595b859c82cfd69e2d38e8870",
+      "sha256": "d1698affc30e6d7bb21e492d4858ce16071fb88061014dfd9458dec1a7cf793f",
       "signer": "1VicTim1",
-      "size": 61993,
+      "size": 62906,
       "type": "plugin",
-      "version": "1.0.0"
+      "version": "1.1.0"
     },
     {
       "author": "1VicTim1",
